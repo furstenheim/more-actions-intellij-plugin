@@ -1,0 +1,28 @@
+<idea-plugin>
+    <id>com.furstenheim.more-actions</id>
+    <name>More Actions</name>
+    <vendor email="furstenheim@gmail.com" url="https://github.com/furstenheim">Gabriel Fürstenheim</vendor>
+
+    <description><![CDATA[
+    More Actions.<br>
+    <em>Compare Multicursors. Show diff between cursors selection</em>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <change-notes>Initial release of the More actions plugin. Includes diff between multicursors</change-notes>
+    <version>1.0.0</version>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="MulticursorDiffAction" class="MulticursorDiffAction" text="Compare Multicursors"
+                description="Compares two strings in multi caret mode">
+        </action>
+    </actions>
+</idea-plugin>
