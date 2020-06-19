@@ -19,7 +19,14 @@ intellij {
     version '2020.1.2'
 }
 patchPluginXml {
-    changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+    sinceBuild '190'
+    untilBuild '230'
+}
+
+publishPlugin {
+    token intellijPublishToken
+}
+
+test {
+    systemProperty  "idea.home.path", "/home/gabi/Gabi/apps-own/more-actions-plugin"
 }

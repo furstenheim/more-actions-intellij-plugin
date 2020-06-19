@@ -4,19 +4,28 @@
     <vendor email="furstenheim@gmail.com" url="https://github.com/furstenheim">Gabriel Fürstenheim</vendor>
 
     <description><![CDATA[
-    More Actions.<br>
-    <em>Compare Multicursors. Show diff between cursors selection</em>
+    <h1>More Actions</h1>
+    <p>This plugins provides more actions to the editor</p>
+    <h3>Compare Multicursors</h3>
+    <p>Show diff between selections in different carets</p>
     ]]></description>
 
-    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
+
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
     </extensions>
 
-    <change-notes>Initial release of the More actions plugin. Includes diff between multicursors</change-notes>
+    <change-notes>
+        <![CDATA[
+        <b>1.0</b><br>
+        <ul>
+          <li>Initial release. Includes compare multicursors</li>
+        </ul>
+        ]]>
+        </change-notes>
+
     <version>1.0.0</version>
 
     <actions>
