@@ -10,6 +10,8 @@
     <p>Show diff between selections in different carets</p>
     <h3>Go to Keymap Configuration</h3>
     <p>Open settings at the keymaps configuration. Great for checking shortcuts</p>
+    <h3>Copy Relative Path of Current File</h3>
+    <p>Copy relative path to clipboard directly from the file</p>
     ]]></description>
 
 
@@ -23,7 +25,8 @@
         <![CDATA[
         <b>1.1</b><br>
         <ul>
-          <li>Add action to go to keymap configuration</li>
+          <li>Go to keymap configuration</li>
+          <li>Copy Relative Path of Current File</li>
         </ul>
         <b>1.0</b><br>
         <ul>
@@ -42,5 +45,6 @@
         <action id="KeyboardShortcutAction" class="KeyboardShortcutAction" text="Go to Keymap Configuration"
         description="Open configuration for keyboard shortcuts">
         </action>
+        <action id="CopyPath" class="CopyPath" text="Copy Relative Path of Current File" description="Copy relative path to clipboard directly from the file"/>
     </actions>
 </idea-plugin>
