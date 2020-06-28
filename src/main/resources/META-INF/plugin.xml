@@ -38,5 +38,6 @@
         <action id="KeyboardShortcutAction" class="KeyboardShortcutAction" text="Go to Keymap Configuration"
         description="Open configuration for keyboard shortcuts">
         </action>
+        <action id="KeyboardShortcutAction2" class="KeyboardShortcutAction2" text="keyboard2"/>
     </actions>
 </idea-plugin>
