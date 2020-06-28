@@ -21,6 +21,10 @@
 
     <change-notes>
         <![CDATA[
+        <b>1.1</b><br>
+        <ul>
+          <li>Add action to go to keymap configuration</li>
+        </ul>
         <b>1.0</b><br>
         <ul>
           <li>Initial release. Includes compare multicursors</li>
@@ -38,6 +42,5 @@
         <action id="KeyboardShortcutAction" class="KeyboardShortcutAction" text="Go to Keymap Configuration"
         description="Open configuration for keyboard shortcuts">
         </action>
-        <action id="KeyboardShortcutAction2" class="KeyboardShortcutAction2" text="keyboard2"/>
     </actions>
 </idea-plugin>
