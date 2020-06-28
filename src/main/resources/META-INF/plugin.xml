@@ -8,6 +8,8 @@
     <p>This plugins provides more actions to the editor</p>
     <h3>Compare Multicursors</h3>
     <p>Show diff between selections in different carets</p>
+    <h3>Go to Keymap Configuration</h3>
+    <p>Open settings at the keymaps configuration. Great for checking shortcuts</p>
     ]]></description>
 
 
@@ -32,6 +34,9 @@
         <!-- Add your actions here -->
         <action id="MulticursorDiffAction" class="MulticursorDiffAction" text="Compare Multicursors"
                 description="Compares two strings in multi caret mode">
+        </action>
+        <action id="KeyboardShortcutAction" class="KeyboardShortcutAction" text="Go to Keymap Configuration"
+        description="Open configuration for keyboard shortcuts">
         </action>
     </actions>
 </idea-plugin>
