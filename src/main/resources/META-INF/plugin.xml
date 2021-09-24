@@ -46,5 +46,6 @@
         description="Open configuration for keyboard shortcuts">
         </action>
         <action id="CopyPath" class="CopyPath" text="Copy Relative Path of Current File" description="Copy relative path to clipboard directly from the file"/>
+        <action id="PasteWithMultiCursor" class="PasteWithMultiCursor" text="Paste With Multi Cursor" description="Paste several lines with a caret in each of them"/>
     </actions>
 </idea-plugin>
