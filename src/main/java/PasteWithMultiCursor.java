@@ -1,14 +1,15 @@
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import com.intellij.openapi.command.WriteCommandAction;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.editor.CaretState;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.EditorModificationUtil;
 import com.intellij.openapi.editor.LogicalPosition;
 import com.intellij.openapi.ide.CopyPasteManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.datatransfer.DataFlavor;
@@ -25,17 +26,19 @@ public class PasteWithMultiCursor extends AnAction {
         if (editor == null) {
             return;
         }
-        Project project = ProjectManager.getInstance().getDefaultProject();
+        Application application = ApplicationManager.getApplication();
+        if (application == null) {
+            return;
+        }
 
         Transferable clipboardContent = getClipboardContent();
         if (clipboardContent == null) {
             return;
         }
 
-
         Runnable r = ()-> paste(editor, clipboardContent);
 
-        WriteCommandAction.runWriteCommandAction(project, r);
+        application.runWriteAction(getRunnableWrapper(r, editor));
     }
 
     private void paste(Editor editor, Transferable clipboardContent) {
@@ -79,5 +82,15 @@ public class PasteWithMultiCursor extends AnAction {
             return instance.getContents();
         }
         return null;
+    }
+
+    // From https://stackoverflow.com/a/14472457/1536133
+    protected Runnable getRunnableWrapper(final Runnable runnable, Editor editor) {
+        return new Runnable() {
+            @Override
+            public void run() {
+                CommandProcessor.getInstance().executeCommand(editor.getProject(), runnable, "cut", ActionGroup.EMPTY_GROUP);
+            }
+        };
     }
 }

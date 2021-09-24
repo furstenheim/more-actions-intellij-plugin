@@ -12,6 +12,8 @@
     <p>Open settings at the keymaps configuration. Great for checking shortcuts</p>
     <h3>Copy Relative Path of Current File</h3>
     <p>Copy relative path to clipboard directly from the file</p>
+    <h3>Paste with Multi Cursor</h3>
+    <p>Paste several lines with a cursor at each of them</p>
     ]]></description>
 
 
@@ -23,6 +25,10 @@
 
     <change-notes>
         <![CDATA[
+        <b>1.2</b><br>
+        <ul>
+          <li>Allow to paste with multi cursor</li>
+        </ul>
         <b>1.1</b><br>
         <ul>
           <li>Go to keymap configuration</li>
@@ -35,7 +41,7 @@
         ]]>
         </change-notes>
 
-    <version>1.0.0</version>
+    <version>1.0.2</version>
 
     <actions>
         <!-- Add your actions here -->
@@ -46,6 +52,6 @@
         description="Open configuration for keyboard shortcuts">
         </action>
         <action id="CopyPath" class="CopyPath" text="Copy Relative Path of Current File" description="Copy relative path to clipboard directly from the file"/>
-        <action id="PasteWithMultiCursor" class="PasteWithMultiCursor" text="Paste With Multi Cursor" description="Paste several lines with a caret in each of them"/>
+        <action id="PasteWithMultiCursor" class="PasteWithMultiCursor" text="Paste With Multi Cursor" description="Paste several lines with a caret at the beginning of each of them"/>
     </actions>
 </idea-plugin>
