@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 
 import static com.intellij.openapi.editor.EditorModificationUtil.getStringContent;
 
-public class PasteWithMultiCursor extends AnAction {
+public class PasteWithMultiCursorAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
         final Editor editor = e.getData(CommonDataKeys.EDITOR);
@@ -49,7 +49,6 @@ public class PasteWithMultiCursor extends AnAction {
         int initialOffset = editor.getSelectionModel().getSelectionStart();
         EditorModificationUtil.insertStringAtCaret(editor, stringContent, false, false);
         String sepEscaped = Pattern.quote("\n");
-
 
         List<CaretState> carets = editor.getCaretModel().getCaretsAndSelections();
 

@@ -14,6 +14,8 @@
     <p>Copy relative path to clipboard directly from the file</p>
     <h3>Paste with Multi Cursor</h3>
     <p>Paste several lines with a cursor at each of them</p>
+    <h3>Paste Multiple Lines As Array Of Strings</h3>
+    <p>Given several lines paste them as a an array of strings</p>
     ]]></description>
 
 
@@ -25,6 +27,10 @@
 
     <change-notes>
         <![CDATA[
+        <b>1.3</b><br>
+        <ul>
+          <li>Allow to paste as array of strings</li>
+        </ul>
         <b>1.2</b><br>
         <ul>
           <li>Allow to paste with multi cursor</li>
@@ -52,6 +58,7 @@
         description="Open configuration for keyboard shortcuts">
         </action>
         <action id="CopyPath" class="CopyPath" text="Copy Relative Path of Current File" description="Copy relative path to clipboard directly from the file"/>
-        <action id="PasteWithMultiCursor" class="PasteWithMultiCursor" text="Paste With Multi Cursor" description="Paste several lines with a caret at the beginning of each of them"/>
+        <action id="PasteWithMultiCursorAction" class="PasteWithMultiCursorAction" text="Paste With Multi Cursor" description="Paste several lines with a caret at the beginning of each of them"/>
+        <action id="PasteAsArrayOfStringsAction" class="PasteAsArrayOfStringsAction" text="Paste Multiple Lines As Array Of Strings." description="Paste several lines as an array of escaped strings"/>
     </actions>
 </idea-plugin>
