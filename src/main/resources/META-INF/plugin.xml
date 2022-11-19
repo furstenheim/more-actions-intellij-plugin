@@ -29,6 +29,10 @@
 
     <change-notes>
         <![CDATA[
+        <b>1.5</b><br>
+        <ul>
+          <li>Align carets correctly in paste with multicursor</li>
+        </ul>
         <b>1.4</b><br>
         <ul>
           <li>Remove last caret</li>
@@ -53,7 +57,7 @@
         ]]>
         </change-notes>
 
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 
     <actions>
         <!-- Add your actions here -->
