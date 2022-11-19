@@ -47,6 +47,8 @@ public class PasteWithMultiCursorAction extends AnAction {
             return;
         }
         int initialOffset = editor.getSelectionModel().getSelectionStart();
+
+        // Paste all content from clipboard
         EditorModificationUtil.insertStringAtCaret(editor, stringContent, false, false);
         String sepEscaped = Pattern.quote("\n");
 
@@ -54,7 +56,14 @@ public class PasteWithMultiCursorAction extends AnAction {
 
         int offset = initialOffset;
         String[] parts = stringContent.split(sepEscaped, -1);
-        for (String part : parts) {
+        // For every part of the pasted string select
+        for (int i = 0; i < parts.length; i++) {
+            String part = parts[i];
+
+            // Lots of times we copy several lines, but we do not want a caret on the last empty line
+            if (i == parts.length - 1 && part.length() == 0) {
+                continue;
+            }
             int start = offset;
             int end = offset + part.length();
             offset = end + 1;
